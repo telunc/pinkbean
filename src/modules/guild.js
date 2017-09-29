@@ -3,14 +3,10 @@ import { Guild } from './database';
 
 export default class {
     static async getGuilds() {
-        let cache = await redis.getAsync('guilds');
-        if (cache) return JSON.parse(cache);
         let guilds = await Guild.findAll().catch((error) => {
             console.error(error);
         });
         if (!guilds) return;
-        guilds = guilds.toJSON();
-        await redis.set('guilds', JSON.stringify(guilds), 'EX', 86400);
         return guilds;
     }
     static async getGuildWithId(id) {
