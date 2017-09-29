@@ -1,5 +1,3 @@
-import rp from 'request-promise';
-import config from 'config';
 import redis from './redis';
 import { Guild } from './database';
 
