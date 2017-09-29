@@ -23,7 +23,7 @@
 2. Install Redis
 3. Install <a href="https://nodejs.org/en/">NodeJS and NPM</a>
 4. For Linux, please have `build-essential` and `python 2.7` installed
-5. Clone the directory. `git clone https://github.com/telunc/pinkbean-discord.git`
+5. Clone the directory. `git clone https://github.com/telunc/pinkbean.git`
 6. Install dependencies with `npm install`
 7. Create default.json in /config folder. Please refer to example.json.
 8. Launch MySQL and Redis servers
@@ -33,7 +33,7 @@
 1. Install MySQL Database
 2. Install Redis
 3. Install <a href="https://www.docker.com/">Docker</a>
-4. Clone the directory. `git clone https://github.com/telunc/pinkbean-discord.git`
+4. Clone the directory. `git clone https://github.com/telunc/pinkbean.git`
 5. Create default.json in /config folder. Please refer to example.json.
 6. Launch MySQL and Redis servers
 7. Start Pink Bean with `sh build.sh`
