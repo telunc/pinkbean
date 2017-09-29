@@ -7,20 +7,22 @@ export default class {
     static async getGuilds() {
         let cache = await redis.getAsync('guilds');
         if (cache) return JSON.parse(cache);
-        let guilds = await rp({ uri: `${config.get('server')}/api/guild/`, json: true }).catch(() => {
-            // console.error('failed to load guilds');
+        let guilds = await Guild.findAll().catch((error) => {
+            console.error(error);
         });
         if (!guilds) return;
+        guilds = guilds.toJSON();
         await redis.set('guilds', JSON.stringify(guilds), 'EX', 86400);
         return guilds;
     }
     static async getGuildWithId(id) {
         let cache = await redis.getAsync(`guild-${id}`);
         if (cache) return JSON.parse(cache);
-        let guild = await rp({ uri: `${config.get('server')}/api/guild/${id}`, json: true }).catch(() => {
-            // console.error(`failed to load guild with id ${id}`);
+        let guild = await Guild.findOne({ where: { id: id } }).catch((error) => {
+            console.error(error);
         });
         if (!guild) return;
+        guild = guild.toJSON();
         await redis.set(`guild-${id}`, JSON.stringify(guild), 'EX', 86400);
         return guild;
     }
@@ -28,7 +30,9 @@ export default class {
         let guild = await Guild.update(post, { where: { id: id } }).catch((error) => {
             console.error(error);
         });
-        redis.del(`guild-${id}`);
+        await redis.delAsync(`guild-${id}`).catch((error) => {
+            console.error(error);
+        });
         return guild;
     }
 
@@ -36,7 +40,9 @@ export default class {
         let guild = await Guild.destroy({ where: { id: id } }).catch((error) => {
             console.error(error);
         });
-        redis.del(`guild-${id}`);
+        await redis.delAsync(`guild-${id}`).catch((error) => {
+            console.error(error);
+        });
         return guild;
     }
 
