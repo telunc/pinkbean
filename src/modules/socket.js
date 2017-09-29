@@ -2,7 +2,7 @@ import io from 'socket.io-client';
 import config from 'config';
 import Guild from './guild';
 
-var socket = io.connect(`${config.get('server')}:8000`);
+var socket = io.connect(`${config.get('server')}:8080`);
 
 export default (client) => {
 
