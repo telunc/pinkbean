@@ -1,0 +1,19 @@
+{
+    "database": {
+        "host": "",
+        "user": "",
+        "password": "",
+        "database": ""
+    },
+    "redis": {
+        "host": "",
+        "port": 6379
+    },
+    "discord": {
+        "prefix": "!",
+        "clientId": "",
+        "clientSecret": "",
+        "token": ""
+    },
+    "server": "http://www.pinkbean.xyz"
+}
