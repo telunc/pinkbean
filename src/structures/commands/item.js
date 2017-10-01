@@ -11,10 +11,10 @@ export default async(tokens, message) => {
     let title = item.description && item.description.name;
     let image = `http://www.pinkbean.xyz/api/item/${name}/icon`;
     let description, category;
-    let subCategory = item.typeInfo.category;
-    let detailCategory = item.typeInfo.subCategory;
+    let subCategory = (item.typeInfo) ? item.typeInfo.category : null;
+    let detailCategory = (item.typeInfo) ? item.typeInfo.subCategory : null;
 
-    if (item.metaInfo.equip) {
+    if (item.metaInfo && item.metaInfo.equip) {
         description = '';
         if (item.metaInfo.equip.reqLevel) description += 'Required Level: ' + item.metaInfo.equip.reqLevel + '\n';
         if (item.metaInfo.equip.attackSpeed && item.metaInfo.equip.attackSpeed < 6) description += 'Attack Speed: Fast\n';
@@ -56,6 +56,12 @@ export default async(tokens, message) => {
         category = item.typeInfo.overallCategory;
     }
 
+    let fields = [];
+    if (category) fields.push({ name: 'Category:', value: category });
+    if (subCategory) fields.push({ name: 'Subcategory:', value: subCategory });
+    if (detailCategory) fields.push({ name: 'Detail Category:', value: detailCategory });
+
+
     message.channel.send('', {
         embed: {
             title: title,
@@ -64,11 +70,7 @@ export default async(tokens, message) => {
             thumbnail: {
                 url: image
             },
-            fields: [
-                { name: 'Category:', value: category },
-                { name: 'Subcategory:', value: subCategory },
-                { name: 'Detail Category:', value: detailCategory },
-            ]
+            fields: fields
         }
     });
 };
