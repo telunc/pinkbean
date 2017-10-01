@@ -7,7 +7,7 @@ export default async(tokens, message) => {
         // console.error(`failed to load mob with name ${name}`);
     });
     if (!mob) return message.channel.send('', { embed: { color: 0xFF33A2, title: 'No result found!' } });
-
+    
     let fields = [];
     fields.push({ name: 'Name', value: mob.name, inline: true });
     if (mob.meta.level) fields.push({ name: 'Level', value: mob.meta.level, inline: true });
@@ -31,15 +31,11 @@ export default async(tokens, message) => {
         fields.push({ name: 'Body Attack', value: isBodyAttack, inline: true });
     }
 
-    message.channel.send('', {
-        embed: {
-            color: 0xFF33A2,
-            thumbnail: {
-                url: `http://www.pinkbean.xyz/api/mob/${name}/icon`
-            },
-            fields: fields
-        }
-    });
+    let embed = { color: 0xFF33A2, fields: fields };
+    let url = `http://www.pinkbean.xyz/api/mob/${name}/icon`;
+    (mob.meta.isBoss) ? embed.image = { url: url } : embed.thumbnail = { url: url };
+
+    message.channel.send('', { embed: embed });
 };
 
 function numberWithCommas(x) {
