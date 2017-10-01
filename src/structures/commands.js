@@ -13,6 +13,7 @@ import help from './commands/help';
 import avatar from './commands/avatar';
 import about from './commands/about';
 import prefix from './commands/prefix';
+import news from './commands/news';
 
 export default {
     'help': (tokens, message) => {
@@ -59,6 +60,8 @@ export default {
     },
     'prefix': (tokens, message) => {
         return prefix(tokens, message);
+    },
+    'news': (tokens, message) => {
+        return news(tokens, message);
     }
-
 };

@@ -62,7 +62,7 @@ async function avatarAdd(tokens, message) {
     let item = await rp({ uri: `${config.get('server')}/api/item/${name}/equip`, json: true }).catch(() => {
         // console.error(`failed to load item with name ${name}`);
     });
-    if (!item) return message.reply('', { embed: { title: 'No Result Found' } });
+    if (!item) return message.channel.send('', { embed: { color: 0xFF33A2, title: 'No result found!' } });
 
     await message.reply('Do you want to add this item? (yes/no)',{embed:{
         title: item.Name,
