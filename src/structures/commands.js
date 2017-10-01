@@ -14,6 +14,9 @@ import avatar from './commands/avatar';
 import about from './commands/about';
 import prefix from './commands/prefix';
 import news from './commands/news';
+import time from './commands/time';
+import daily from './commands/daily';
+import weekly from './commands/weekly';
 
 export default {
     'help': (tokens, message) => {
@@ -63,5 +66,14 @@ export default {
     },
     'news': (tokens, message) => {
         return news(tokens, message);
+    },
+    'time': (tokens, message) => {
+        return time(message);
+    },
+    'daily': (tokens, message) => {
+        return daily(message);
+    },
+    'weekly': (tokens, message) => {
+        return weekly(message);
     }
 };
