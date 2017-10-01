@@ -8,15 +8,18 @@ const sequelize = new Sequelize(
     config.get('database').password, {
         host: config.get('database').host,
         dialect: 'mysql',
+        dialectOptions: {
+            charset: 'utf8',
+        },
         logging: false
     }
 );
 
 // test connection
 sequelize.authenticate().then(() => {
-    console.log('Connected');
+    console.log('Database connected');
 }).catch((error) => {
-    console.error('Connection error:', error);
+    console.error('Database connection error:', error);
 });
 
 const Guild = sequelize.define('guild', {
