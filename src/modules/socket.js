@@ -18,8 +18,7 @@ export default (client) => {
                 '\n[Server Time]\n' + data.time +
                 '\n\n[Daily Reset]\n' + data.daily +
                 '\n\n[Weekly Reset]\n' + data.weekly +
-                '\n\n[Guild Reset]\n' + data.guild +
-                '\n\n[Dojo Reset]\n' + data.dojo +
+                '\n\n[Guild and Dojo Reset]\n' + data.guild +
                 '\n```'
             );
         });
