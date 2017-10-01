@@ -9,6 +9,7 @@ const help =
 
 News Engine:
   !sub                    Toggle news subscription
+  !news                   News help
 Music Engine:
   !play        [video]    Search YouTube link and keyword
   !join                   Join voice channel
@@ -22,7 +23,7 @@ Music Engine:
   !clear                  Clear songs in queue
 Maple Engine:
   !timer                  Toggle timer
-  !avatar      [help]     Avatar help page
+  !avatar      [help]     Avatar help
   !rank        (name)     NA server ranking
   !rank-jw     (name)     NA job world ranking
   !rank-ja     (name)     NA job alliance ranking
@@ -31,6 +32,9 @@ Maple Engine:
   !rankeu-ja   (name)     EU job alliance ranking
   !mob         (mob)      Mob detail
   !item        (item)     Item detail
+  !time                   Server time
+  !daily                  Time left until daily reset
+  !weekly                 Time left until weekly reset
 General:
   !ping                   Pink Bean latency
   !prefix                 Customize prefix
