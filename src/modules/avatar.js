@@ -1,17 +1,10 @@
 import { Avatar } from './database';
 
 export default class {
-
-    static async getAvatarWithId(id) {
-        return Avatar.findOne({ where: { id: id } }).catch((error) => {
-            console.error(error);
-        });
-    }
     
     static async updateAvatarWithId(id, post) {
-        let avatar = await this.getAvatarWithId(id);
-        if (!avatar) return;
-        return avatar.update(post);
+        if (post.selectedItems) post.selectedItems = encodeURI(post.selectedItems);
+        return Avatar.update(post, { where: { id: id } });
     }
 
     static async setAvatar(post) {
