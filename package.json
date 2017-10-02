@@ -1,7 +1,6 @@
 {
-	"name": "pinkbean-discord",
+	"name": "pinkbean",
 	"version": "2.0.0",
-	"private": true,
 	"description": "A MapleStory Discord Bot",
 	"main": "lib/index.js",
 	"scripts": {
@@ -12,8 +11,12 @@
 		"production": "node lib/index.js",
 		"compile": "npm run clean && babel src -d lib"
 	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/telunc/pinkbean.git"
+	},
 	"author": "Te Lun Chen",
-	"license": "ISC",
+	"license": "MIT",
 	"dependencies": {
 		"bufferutil": "^3.0.2",
 		"config": "^1.26.2",
