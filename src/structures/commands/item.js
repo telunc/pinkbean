@@ -11,8 +11,8 @@ export default async(tokens, message) => {
     let title = item.description && item.description.name;
     let image = `http://www.pinkbean.xyz/api/item/${name}/icon`;
     let description, category;
-    let subCategory = (item.typeInfo) ? item.typeInfo.category : null;
-    let detailCategory = (item.typeInfo) ? item.typeInfo.subCategory : null;
+    let subCategory = item.typeInfo.category;
+    let detailCategory = item.typeInfo.subCategory;
 
     if (item.metaInfo && item.metaInfo.equip) {
         description = '';
@@ -45,22 +45,12 @@ export default async(tokens, message) => {
         description = item.description && item.description.description.replace(/\\r\\n/g, '\n').replace(/#c/g, '').replace(/#/g, '').replace(/\\n/g, '\n');
     }
 
-    if (item.metaInfo.cash) {
-        if (item.metaInfo.cash.cash) {
-            category = 'Cash';
-            description = 'Cash item';
-        } else {
-            category = item.typeInfo.overallCategory;
-        }
+    if (item.metaInfo.cash && item.metaInfo.cash.cash) {
+        category = 'Cash';
+        description = 'Cash item';
     } else {
         category = item.typeInfo.overallCategory;
     }
-
-    let fields = [];
-    if (category) fields.push({ name: 'Category:', value: category });
-    if (subCategory) fields.push({ name: 'Subcategory:', value: subCategory });
-    if (detailCategory) fields.push({ name: 'Detail Category:', value: detailCategory });
-
 
     message.channel.send('', {
         embed: {
@@ -70,7 +60,11 @@ export default async(tokens, message) => {
             thumbnail: {
                 url: image
             },
-            fields: fields
+            fields: [
+                { name: 'Category:', value: category },
+                { name: 'Subcategory:', value: subCategory },
+                { name: 'Detail Category:', value: detailCategory }
+            ]
         }
     });
 };
