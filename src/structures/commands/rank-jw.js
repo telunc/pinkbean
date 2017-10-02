@@ -1,13 +1,13 @@
 import rp from 'request-promise';
 import config from 'config';
 
-export default async(tokens, message) => {
+export default async(tokens, message, server) => {
     let name = tokens.shift();
-    let character = await rp({ uri: `${config.get('server')}/api/rank/na/${name}/overall`, json: true }).catch(() => {
+    let character = await rp({ uri: `${config.get('server')}/api/rank/${server}/${name}/overall`, json: true }).catch(() => {
         // console.error(`failed to load character with name ${name}`);
     });
     if (!character) return message.channel.send('', { embed: { color: 0xFF33A2, title: 'No result found!' } });
-    let characters = await rp({ uri: `${config.get('server')}/api/rank/na/${name}/job-world`, json: true }).catch(() => {
+    let characters = await rp({ uri: `${config.get('server')}/api/rank/${server}/${name}/job-world`, json: true }).catch(() => {
         // console.error(`failed to load character with name ${name}`);
     });
     if (!characters) return message.channel.send('', { embed: { color: 0xFF33A2, title: 'No result found!' } });

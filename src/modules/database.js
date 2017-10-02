@@ -8,9 +8,6 @@ const sequelize = new Sequelize(
     config.get('database').password, {
         host: config.get('database').host,
         dialect: 'mysql',
-        dialectOptions: {
-            charset: 'utf8',
-        },
         logging: false
     }
 );

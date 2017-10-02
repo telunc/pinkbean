@@ -2,9 +2,6 @@ import ping from './commands/ping';
 import rank from './commands/rank';
 import rankjw from './commands/rank-jw';
 import rankja from './commands/rank-ja';
-import rankeu from './commands/rankeu';
-import rankeujw from './commands/rankeu-jw';
-import rankeuja from './commands/rankeu-ja';
 import mob from './commands/mob';
 import item from './commands/item';
 import sub from './commands/sub';
@@ -26,22 +23,22 @@ export default {
         return ping(message);
     },
     'rank': (tokens, message) => {
-        return rank(tokens, message);
+        return rank(tokens, message, 'na');
     },
     'rank-jw': (tokens, message) => {
-        return rankjw(tokens, message);
+        return rankjw(tokens, message, 'na');
     },
     'rank-ja': (tokens, message) => {
-        return rankja(tokens, message);
+        return rankja(tokens, message, 'na');
     },
     'rankeu': (tokens, message) => {
-        return rankeu(tokens, message);
+        return rank(tokens, message, 'eu');
     },
     'rankeu-jw': (tokens, message) => {
-        return rankeujw(tokens, message);
+        return rankjw(tokens, message, 'eu');
     },
     'rankeu-ja': (tokens, message) => {
-        return rankeuja(tokens, message);
+        return rankja(tokens, message, 'eu');
     },
     'mob': (tokens, message) => {
         return mob(tokens, message);
