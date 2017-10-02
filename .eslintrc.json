@@ -1,30 +1,20 @@
 {
     "env": {
-        "browser": true,
         "node": true,
-        "commonjs": true,
         "es6": true
     },
-    "extends": ["eslint:recommended", "plugin:react/recommended"],
+    "extends": ["eslint:recommended"],
     "parserOptions": {
         "ecmaVersion": 2017,
         "ecmaFeatures": {
-            "experimentalObjectRestSpread": true,
-            "jsx": true
+            "experimentalObjectRestSpread": true
         },
         "sourceType": "module"
     },
-    "plugins": [
-        "react"
-    ],
     "rules": {
         "indent": [
             "error",
             4
-        ],
-        "linebreak-style": [
-            "error",
-            "unix"
         ],
         "quotes": [
             "error",
@@ -40,17 +30,6 @@
                 "allow": [
                     "log",
                     "error"
-                ]
-            }
-        ],
-        "no-cond-assign": [
-            0
-        ],
-        "react/prop-types": [
-            "error",
-            {
-                "ignore": [
-                    "children"
                 ]
             }
         ]

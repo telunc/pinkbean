@@ -2,6 +2,7 @@ import redis from './redis';
 import { Guild } from './database';
 
 export default class {
+
     static async getGuilds() {
         let guilds = await Guild.findAll().catch((error) => {
             console.error(error);
@@ -9,6 +10,7 @@ export default class {
         if (!guilds) return;
         return guilds;
     }
+
     static async getGuildWithId(id) {
         let cache = await redis.getAsync(`guild-${id}`);
         if (cache) return JSON.parse(cache);
@@ -20,6 +22,7 @@ export default class {
         await redis.set(`guild-${id}`, JSON.stringify(guild), 'EX', 86400);
         return guild;
     }
+
     static async updateGuildWithId(id, post) {
         let guild = await Guild.update(post, { where: { id: id } }).catch((error) => {
             console.error(error);
@@ -43,4 +46,5 @@ export default class {
     static async setGuild(post) {
         return Guild.create(post);
     }
+
 }
