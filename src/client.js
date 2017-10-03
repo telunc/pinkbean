@@ -2,11 +2,13 @@ import Discord from 'discord.js';
 import config from 'config';
 import tokenizer from './modules/tokenizer';
 import socket from './modules/socket';
+import support from './modules/support';
 import commands from './structures/commands';
 
 let timer;
 const client = new Discord.Client();
 socket(client);
+support(client);
 
 client.on('ready', () => {
     watchdog();

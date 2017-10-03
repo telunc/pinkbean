@@ -13,7 +13,8 @@
         "prefix": "!",
         "clientId": "",
         "clientSecret": "",
-        "token": ""
+        "token": "",
+        "guildLog": ""
     },
     "server": "http://www.pinkbean.xyz"
 }
