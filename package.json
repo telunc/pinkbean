@@ -30,6 +30,7 @@
 		"request-promise": "^4.2.2",
 		"sequelize": "^4.13.2",
 		"socket.io-client": "^2.0.3",
+		"universal-analytics": "^0.4.15",
 		"uws": "^8.14.1"
 	},
 	"devDependencies": {

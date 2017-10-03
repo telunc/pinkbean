@@ -3,6 +3,7 @@ import config from 'config';
 import tokenizer from './modules/tokenizer';
 import socket from './modules/socket';
 import support from './modules/support';
+import analytics from './modules/analytics';
 import commands from './structures/commands';
 
 let timer;
@@ -22,7 +23,10 @@ client.on('message', async message => {
     let tokens = await tokenizer.getTokens(message);
     if (!tokens) return;
     let command = tokens.shift();
-    if (commands.hasOwnProperty(command)) commands[command](tokens, message, client);
+    if (commands.hasOwnProperty(command)) {
+        analytics(command, message);
+        commands[command](tokens, message, client);
+    }
 });
 
 function watchdog() {
