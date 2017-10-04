@@ -6,7 +6,7 @@ export default async(tokens, message) => {
     if (!prefix) return message.channel.send('', {
         embed: {
             title: 'Help: Prefix',
-            description: 'To use this command, please supply a new prefix\nFor example, `leah prefix ?`\n\nYou may also put the prefix in curly braces.\nFor example, `leah prefix {Leah }`',
+            description: 'To use this command, please supply a new prefix\nFor example, `!prefix ?`\n\nYou may also put the prefix in curly braces.\nFor example, `!prefix {pb }`',
             color: 0x33A2FF
         }
     });
