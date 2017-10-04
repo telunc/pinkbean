@@ -12,7 +12,7 @@ export default (client) => {
     });
     client.on('guildDelete', (guild) => {
         if (log) log.send('', { embed: buildEmbed(guild, false) });
-        Guild.deleteGuild(guild.id);
+        Guild.deleteGuildWithId(guild.id);
     });
 };
 
