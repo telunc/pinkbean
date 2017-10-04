@@ -35,6 +35,7 @@ Maple Engine:
   !time                   Server time
   !daily                  Time left until daily reset
   !weekly                 Time left until weekly reset
+  !invasion               Time left until Kritias invasion
 General:
   !ping                   Pink Bean latency
   !prefix                 Customize prefix

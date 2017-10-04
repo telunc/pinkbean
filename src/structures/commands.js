@@ -14,6 +14,7 @@ import news from './commands/news';
 import time from './commands/time';
 import daily from './commands/daily';
 import weekly from './commands/weekly';
+import invasion from './commands/invasion';
 
 export default {
     'help': (tokens, message) => {
@@ -72,5 +73,8 @@ export default {
     },
     'weekly': (tokens, message) => {
         return weekly(message);
+    },
+    'invasion': (tokens, message) => {
+        return invasion(message);
     }
 };
