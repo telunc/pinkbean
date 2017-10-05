@@ -37,6 +37,18 @@ export default (client) => {
         });
     });
 
+    socket.on('maintenance', async(isOnline) => {
+        let guilds = await Guild.getGuilds();
+        if (!guilds || !Array.isArray(guilds)) return;
+        guilds.forEach(async(guild) => {
+            let channel = client.channels.get(guild.notice_id);
+            if (!channel) return;
+            let msg = (isOnline) ? 'Maintenance is now complete. See y’all in game!' : 'Maplestory is undergoing maintenance';
+            let notice_msg = (guild.notice_msg) ? guild.notice_msg : '';
+            channel.send(`${notice_msg}\n${msg}`);
+        });
+    });
+
 };
 
 async function bulkDelete(channel) {
