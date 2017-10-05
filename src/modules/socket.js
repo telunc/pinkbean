@@ -13,15 +13,17 @@ export default (client) => {
             let channel = client.channels.get(guild.timer_id);
             if (!channel) return;
             await bulkDelete(channel);
-            channel.send(
-                '```js' +
-                '\n[Server Time]\n' + data.time +
-                '\n\n[Daily Reset]\n' + data.daily +
-                '\n\n[Weekly Reset]\n' + data.weekly +
-                '\n\n[Guild and Dojo Reset]\n' + data.guild +
-                '\n\n[Kritias Invasion]\n' + data.invasion +
-                '\n```'
-            );
+            let text = '```js' +
+            '\n[Server Time]\n' + data.time +
+            '\n\n[Daily Reset]\n' + data.daily +
+            '\n\n[Weekly Reset]\n' + data.weekly +
+            '\n\n[Guild and Dojo Reset]\n' + data.guild +
+            '\n\n[Kritias Invasion]\n' + data.invasion;
+            if (data.current2x) text += '\n\n[2x EXP & Drop Event Ends In]\n' + data.current2x;
+            if (data.next2x) text += '\n\n[2x EXP & Drop Event Starts In]\n' + data.next2x;
+            text += '\n```';
+            console.log(text);
+            channel.send(text);
         });
     });
 
