@@ -37,6 +37,7 @@ Maple Engine:
   !weekly                 Time left until weekly reset
   !invasion               Time left until Kritias invasion
   !maintenance [message]  Toggle maintenance notification
+  !2x                     2x EXP and Drop Event
 General:
   !ping                   Pink Bean latency
   !prefix                 Customize prefix
@@ -45,8 +46,8 @@ General:
 **Website:**
 <http://www.pinkbean.xyz>
 
-**Invite:**
-<http://www.pinkbean.xyz/invite>
+**Donate:**
+<https://www.patreon.com/PinkBean>
 
 **Support:**
 https://discord.gg/wBUKQhN`;
