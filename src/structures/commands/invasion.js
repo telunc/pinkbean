@@ -5,11 +5,11 @@ export default (message) => {
 };
 
 function invasion() {
-    let next;
     let now = new Date();
     let periods = [8, 10, 12, 14, 16, 18, 20, 22];
-
     periods = periods.map((period) => moment({ hour: period }));
+    let next = periods[0];
+    
     periods.forEach((period, index) => {
         if (period < now) {
             if (index === periods.length - 1) {
