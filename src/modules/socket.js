@@ -22,7 +22,6 @@ export default (client) => {
             if (data.current2x) text += '\n\n[2x EXP & Drop Event Ends In]\n' + data.current2x;
             if (data.next2x) text += '\n\n[2x EXP & Drop Event Starts In]\n' + data.next2x;
             text += '\n```';
-            console.log(text);
             channel.send(text);
         });
     });
