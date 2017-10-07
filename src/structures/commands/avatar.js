@@ -12,6 +12,7 @@ export default async(tokens, message) => {
     if (token === 'add') return await avatarAdd(tokens, message);
     if (token === 'delete') return await avatarDelete(message);
     if (token === 'help') return await avatarHelp(message);
+    if (token === 'design') return await avatarDesign(message);
     if (token === 'init') return await avatarInit(tokens, message);
     if (message.mentions && message.mentions.users.size) return await avatarMention(message);
 };
@@ -128,10 +129,15 @@ async function avatarHelp(message) {
                 { name: '!avatar download', value: 'Download your avatar' },
                 { name: '!avatar [@mention]', value: 'Display your mentioned buddy\'s avatar' },
                 { name: '!avatar random', value: 'Display a random avatar' },
-                { name: '!avatar help', value: 'Display this message' }
+                { name: '!avatar help', value: 'Display this message' },
+                { name: '!avatar design', value: 'Pink Bean: Design' }
             ]
         }
     });
+}
+
+async function avatarDesign(message) {
+    message.channel.send('<http://www.pinkbean.xyz/design>');
 }
 
 async function avatarInit(tokens, message) {
