@@ -19,8 +19,8 @@ export default (client) => {
             '\n\n[Weekly Reset]\n' + data.weekly +
             '\n\n[Guild and Dojo Reset]\n' + data.guild +
             '\n\n[Kritias Invasion]\n' + data.invasion;
-            if (data.current2x) text += '\n\n[2x EXP & Drop Event Ends In]\n' + data.current2x;
-            if (data.next2x) text += '\n\n[2x EXP & Drop Event Starts In]\n' + data.next2x;
+            if (data.current2x) text += '\n\n[Current 2x EXP & Drop Event Ends In]\n' + data.current2x;
+            if (data.next2x) text += '\n\n[Next 2x EXP & Drop Event Starts In]\n' + data.next2x;
             text += '\n```';
             channel.send(text);
         });
