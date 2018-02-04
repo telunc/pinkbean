@@ -53,7 +53,7 @@ async function avatarAdd(tokens, message) {
         embed: {
             color: 0xFF33A2,
             title: 'Initiate your avatar base with !avatar init [color]',
-            description: 'Here are some available colors: \n`light`, `ashen`, `pale pink`, `tanned`, `pale`, `green`, `ghostly`, `dark`, `clay`'
+            description: 'Here are some available colors: \n`light`, `ashen`, `pale pink`, `tanned`, `pale`, `green`, `ghostly`, `dark`, `clay`, `mercedes`'
         }
     }).catch(() => {
         message.channel.send('Failed to load avatar resource');
@@ -170,6 +170,8 @@ async function avatarInit(tokens, message) {
         color = 2002;
     } else if (token === 'clay') {
         color = 2011;
+    } else if (token === 'mercedes') {
+        color = 2012;
     } else {
         color = 2000;
     }
