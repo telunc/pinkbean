@@ -123,7 +123,7 @@ async function avatarHelp(message) {
             description: 'A simple MapleStory simulator',
             fields: [
                 { name: '!avatar', value: 'Display your avatar / show this command' },
-                { name: '!avatar init (color)', value: 'Choose one of the following colors to initiate your avatar base\n`light`, `ashen`, `pale pink`, `tanned`, `pale`, `green`, `ghostly`, `dark`, `clay`' },
+                { name: '!avatar init (color)', value: 'Choose one of the following colors to initiate your avatar base\n`light`, `ashen`, `pale pink`, `tanned`, `pale`, `green`, `ghostly`, `dark`, `clay`, `mercedes`' },
                 { name: '!avatar add (item)', value: 'Search and equip your avatar' },
                 { name: '!avatar delete', value: 'Delete your avatar' },
                 { name: '!avatar download', value: 'Download your avatar' },
