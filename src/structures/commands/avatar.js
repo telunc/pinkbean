@@ -200,7 +200,7 @@ async function avatarMention(message) {
         }
     });
     return await message.channel.send({
-        files: [{ attachment: `${config.get('server')}/api/avatar/${member.id}/icon`, name: 'avatar.png' }]
+        files: [{ attachment: `${config.get('server')}/api/avatar/${member.id}/icon`, name: 'avatar.gif' }]
     }).catch(() => {
         message.channel.send('Failed to load avatar resource');
     });
