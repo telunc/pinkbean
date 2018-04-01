@@ -21,7 +21,7 @@ async function avatar(message) {
     let avatar = await getAvatar(message.author.id);
     if (!avatar) return await avatarHelp(message);
     return await message.channel.send({
-        files: [{ attachment: `${config.get('server')}/api/avatar/${avatar.id}/icon`, name: 'avatar.png' }]
+        files: [{ attachment: `${config.get('server')}/api/avatar/${avatar.id}/icon`, name: 'avatar.gif' }]
     }).catch(() => {
         message.channel.send('Failed to load avatar resource');
     });
@@ -30,7 +30,7 @@ async function avatar(message) {
 async function avatarRandom(message) {
     let url = 'http://labs.maplestory.io/api/gms/latest/character/random?' + message.author.id + (Math.random().toString(36).substring(2));
     return message.channel.send({
-        file: { attachment: url, name: 'avatar.png' },
+        file: { attachment: url, name: 'avatar.gif' },
     }).catch(() => {
         message.channel.send('Failed to load random avatar');
     });
@@ -90,7 +90,7 @@ async function avatarAdd(tokens, message) {
     await Avatar.updateAvatarWithId(message.author.id, avatar);
 
     return await message.channel.send({
-        files: [{ attachment: `${config.get('server')}/api/avatar/${message.author.id}/icon`, name: 'avatar.png' }]
+        files: [{ attachment: `${config.get('server')}/api/avatar/${message.author.id}/icon`, name: 'avatar.gif' }]
     }).catch(() => {
         message.channel.send('Failed to load avatar resource');
     });
@@ -181,7 +181,7 @@ async function avatarInit(tokens, message) {
     await Avatar.setAvatar(body);
 
     return await message.channel.send({
-        files: [{ attachment: `${config.get('server')}/api/avatar/${message.author.id}/icon`, name: 'avatar.png' }]
+        files: [{ attachment: `${config.get('server')}/api/avatar/${message.author.id}/icon`, name: 'avatar.gif' }]
     }).catch(() => {
         message.channel.send('Failed to load avatar resource');
     });
