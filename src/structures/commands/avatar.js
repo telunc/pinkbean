@@ -9,6 +9,7 @@ export default async(tokens, message) => {
     let token = tokens.shift();
     if (token === 'random') return await avatarRandom(message);
     if (token === 'download') return await avatarDownload(message);
+    if (token === 'chat') return await avatarChat(message);
     if (token === 'add') return await avatarAdd(tokens, message);
     if (token === 'delete') return await avatarDelete(message);
     if (token === 'help') return await avatarHelp(message);
@@ -45,6 +46,17 @@ async function avatarDownload(message) {
         }
     });
     return message.channel.send(`<${config.get('server')}/api/avatar/${avatar.id}/download>`);
+}
+
+async function avatarChat(message) {
+    let avatar = await getAvatar(message.author.id);
+    if (!avatar) return message.channel.send('', {
+        embed: {
+            color: 0xFF33A2,
+            title: 'You do not have an existing avatar',
+        }
+    });
+    return message.channel.send(`<${config.get('server')}/api/avatar/${avatar.id}/chat/${message.author.username}>`);
 }
 
 async function avatarAdd(tokens, message) {
@@ -127,6 +139,7 @@ async function avatarHelp(message) {
                 { name: '!avatar add (item)', value: 'Search and equip your avatar' },
                 { name: '!avatar delete', value: 'Delete your avatar' },
                 { name: '!avatar download', value: 'Download your avatar' },
+                { name: '!avatar chat', value: 'Play with Henesys.Chat' },
                 { name: '!avatar [@mention]', value: 'Display your mentioned buddy\'s avatar' },
                 { name: '!avatar random', value: 'Display a random avatar' },
                 { name: '!avatar help', value: 'Display this message' },
