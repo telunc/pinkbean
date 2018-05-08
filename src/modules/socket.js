@@ -10,9 +10,10 @@ export default (client) => {
         let guilds = await Guild.getGuilds();
         if (!guilds || !Array.isArray(guilds)) return;
         guilds.forEach(async(guild) => {
+            guild = guild.dataValues;
             let channel = client.channels.get(guild.timer_id);
             if (!channel) return;
-            await bulkDelete(channel);
+
             let text = '```js' +
             '\n[Server Time]\n' + data.time +
             '\n\n[Daily Reset]\n' + data.daily +
@@ -22,7 +23,21 @@ export default (client) => {
             if (data.current2x) text += '\n\n[Current 2x EXP & Drop Event Ends In]\n' + data.current2x;
             if (data.next2x) text += '\n\n[Next 2x EXP & Drop Event Starts In]\n' + data.next2x;
             text += '\n```';
-            channel.send(text);
+
+            if (!guild.timer_message) return sendMessage();
+            await channel.fetchMessage(guild.timer_message).then((message) => {
+                message.edit(text);
+            }).catch(async() => {
+                sendMessage();
+            });
+
+            async function sendMessage() {
+                await bulkDelete(channel);
+                channel.send(text).then(((message) => {
+                    guild.timer_message = message.id;
+                    Guild.updateGuildWithId(guild.id, guild);
+                }));
+            }
         });
     });
 

@@ -26,6 +26,7 @@ const Guild = sequelize.define('guild', {
     notice_id: { type: Sequelize.STRING },
     notice_msg: { type: Sequelize.STRING },
     timer_id: { type: Sequelize.STRING },
+    timer_message: { type: Sequelize.STRING },
     prefix: { type: Sequelize.STRING }
 }, {
     timestamps: false
