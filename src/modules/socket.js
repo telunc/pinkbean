@@ -26,7 +26,9 @@ export default (client) => {
 
             if (!guild.timer_message) return sendMessage();
             await channel.fetchMessage(guild.timer_message).then((message) => {
-                message.edit(text);
+                message.edit(text).catch(() => {
+                    sendMessage();
+                });
             }).catch(async() => {
                 sendMessage();
             });
