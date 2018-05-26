@@ -74,6 +74,7 @@ async function bulkDelete(channel) {
     let filteredMessages = messages.filter((message) => {
         return message.author.id === config.get('discord').clientId;
     });
+    if (typeof channel.bulkDelete !== 'function') return;
     await channel.bulkDelete(filteredMessages).catch(async() => {
         // console.error('failed to delete messages');
         if (filteredMessages.first()) await filteredMessages.first().delete().catch(() => {

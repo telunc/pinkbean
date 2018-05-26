@@ -26,7 +26,7 @@
 		"caniuse-lite": "^1.0.30000792",
 		"config": "^1.29.4",
 		"connect-redis": "^3.3.3",
-		"discord.js": "github:telunc/discord.js#6f7f075",
+		"discord.js": "^11.3.2",
 		"erlpack": "github:hammerandchisel/erlpack",
 		"generic-pool": "^3.4.1",
 		"libsodium-wrappers": "^0.5.4",
