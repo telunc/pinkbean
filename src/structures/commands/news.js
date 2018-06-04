@@ -38,6 +38,7 @@ async function buildFields(category, message) {
         // console.error(`failed to load item with name ${name}`);
     });
     if (!results) return message.channel.send('', { embed: { color: 0x33A2FF, title: 'No result found!' } });
+    if (!results.length) return message.channel.send('', { embed: { color: 0x33A2FF, title: `No upcoming and ongoing ${category}!` } });
     let fields = [];
     results.forEach((post) => {
         let fromDate = new Date(Date.parse(post.fromDate));
