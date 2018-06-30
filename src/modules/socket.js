@@ -75,10 +75,12 @@ async function bulkDelete(channel) {
         return message.author.id === config.get('discord').clientId;
     });
     if (typeof channel.bulkDelete !== 'function') return;
-    await channel.bulkDelete(filteredMessages).catch(async() => {
-        // console.error('failed to delete messages');
+    try {
+        await channel.bulkDelete(filteredMessages); 
+    } catch(error) {
+         // console.error('failed to delete messages');
         if (filteredMessages.first()) await filteredMessages.first().delete().catch(() => {
             console.error('failed to delete message');
         });
-    });
+    }
 }
