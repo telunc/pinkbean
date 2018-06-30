@@ -78,7 +78,7 @@ async function bulkDelete(channel) {
     try {
         await channel.bulkDelete(filteredMessages); 
     } catch(error) {
-         // console.error('failed to delete messages');
+        // console.error('failed to delete messages');
         if (filteredMessages.first()) await filteredMessages.first().delete().catch(() => {
             console.error('failed to delete message');
         });
