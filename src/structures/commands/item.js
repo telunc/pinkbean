@@ -9,7 +9,7 @@ export default async(tokens, message) => {
     if (!item) return message.channel.send('', { embed: { color: 0xFF33A2, title: 'No result found!' } });
 
     let title = item.description && item.description.name;
-    let image = `http://www.pinkbean.xyz/api/item/${name}/icon`;
+    let image = `https://www.pinkbean.xyz/api/item/${name}/icon`;
     let description, category;
     let subCategory = item.typeInfo.category;
     let detailCategory = item.typeInfo.subCategory;

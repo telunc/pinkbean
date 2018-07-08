@@ -82,7 +82,7 @@ async function avatarAdd(tokens, message) {
         description: `Category: ${item.typeInfo.subCategory}`,
         color: 0xFF33A2,
         thumbnail:{
-            url: `http://www.pinkbean.xyz/api/item/${name}/icon`
+            url: `https://www.pinkbean.xyz/api/item/${name}/icon`
         }
     }});
     let choice = await collector(message);
@@ -150,7 +150,7 @@ async function avatarHelp(message) {
 }
 
 async function avatarDesign(message) {
-    message.channel.send('<http://www.pinkbean.xyz/design>');
+    message.channel.send('<https://www.pinkbean.xyz/design>');
 }
 
 async function avatarInit(tokens, message) {

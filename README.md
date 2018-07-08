@@ -1,5 +1,5 @@
 <h1 align="center">
-  <a href="http://www.pinkbean.xyz/"><img src="http://www.pinkbean.xyz/image/pinkbean.png" width="256px" alt="Pink Bean"></a>
+  <a href="https://www.pinkbean.xyz/"><img src="https://www.pinkbean.xyz/image/pinkbean.png" width="256px" alt="Pink Bean"></a>
   <br />
   Pink Bean
   <br />

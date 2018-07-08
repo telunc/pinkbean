@@ -32,7 +32,7 @@ export default async(tokens, message) => {
     }
 
     let embed = { color: 0xFF33A2, fields: fields };
-    let url = `http://www.pinkbean.xyz/api/mob/${name}/icon`;
+    let url = `https://www.pinkbean.xyz/api/mob/${name}/icon`;
     (mob.meta.isBoss) ? embed.image = { url: url } : embed.thumbnail = { url: url };
 
     message.channel.send('', { embed: embed });

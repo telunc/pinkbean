@@ -10,7 +10,7 @@ export default async(message, client) => {
             description: `${client.user.username} is a project I made to give back the community. Thanks for all the love and support!`,
             author: {
                 name: `${client.user.username}`,
-                url: 'http://pinkbean.xyz/'
+                url: 'https://pinkbean.xyz/'
             },
             fields: await buildBotInfo(client),
             color: 0x33A2FF
@@ -38,7 +38,7 @@ async function buildBotInfo(client) {
     });
     fields.push({
         name: 'Website',
-        value: '[pinkbean.xyz](http://pinkbean.xyz/)',
+        value: '[pinkbean.xyz](https://pinkbean.xyz/)',
         inline: true
     });
     fields.push({

@@ -44,7 +44,7 @@ General:
 \`\`\`
 
 **Website:**
-<http://www.pinkbean.xyz>
+<https://www.pinkbean.xyz>
 
 **Donate:**
 <https://www.patreon.com/PinkBean>
