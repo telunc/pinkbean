@@ -7,23 +7,10 @@ const help =
 
 @Parameters (required), [optional];
 
-News Engine:
+MapleStory Commands:
   !sub                    Toggle news subscription
   !news                   News help
-Music Engine:
-  !play        [video]    Search YouTube link and keyword
-  !join                   Join voice channel
-  !leave                  Leave voice channel
-  !pause                  Pause current song
-  !resume                 Resume current song
-  !skip                   Skip current song
-  !current                Display current playing song
-  !queue                  Display songs in queue
-  !shuffle                Shuffle songs in queue
-  !clear                  Clear songs in queue
-Maple Engine:
   !timer                  Toggle timer
-  !avatar      [help]     Avatar help
   !rank        (name)     NA server ranking
   !rank-jw     (name)     NA job world ranking
   !rank-ja     (name)     NA job alliance ranking
@@ -36,9 +23,8 @@ Maple Engine:
   !daily                  Time left until daily reset
   !weekly                 Time left until weekly reset
   !invasion               Time left until Kritias invasion
-  !maintenance [message]  Toggle maintenance notification
-  !2x                     2x EXP and Drop Event
 General:
+  !about                  About Pink Bean
   !ping                   Pink Bean latency
   !prefix                 Customize prefix
 \`\`\`
