@@ -1,5 +1,5 @@
 <h1 align="center">
-  <a href="https://www.pinkbean.xyz/"><img src="https://www.pinkbean.xyz/image/pinkbean.png" width="256px" alt="Pink Bean"></a>
+  <a href="https://www.pinkbean.xyz/"><img src="https://i.imgur.com/ajAYkdK.png" width="256px" alt="Pink Bean"></a>
   <br />
   Pink Bean
   <br />
@@ -7,9 +7,11 @@
 <h4 align="center">A multi-purpose bot for MapleStory.</h4>
 <p align="center">
   <a href="https://discord.gg/wBUKQhN" target="_blank"><img src="https://discordapp.com/api/guilds/275541650024169472/embed.png" alt="Discord"></a>
-  <a href="https://david-dm.org/telunc/pinkbean" title="dependencies status"><img src="https://david-dm.org/telunc/pinkbean/status.svg"/></a>
   <a href="https://travis-ci.org/telunc/pinkbean" target="_blank"><img src="https://travis-ci.org/telunc/pinkbean.svg?branch=master"></a>
 </p>
+
+## Demo
+https://user-images.githubusercontent.com/18632616/212132989-53791774-a713-4a39-a39a-84335f1a998a.mp4
 
 ## Contributing Guideline
 1. Fork the repo. To preserve quality commits and for safety, only Pink Bean team members may commit directly to our repository. To contribute an update or otherwise commit that resolves an Issue, you will need to first fork a copy to your own account. For more information about creating a fork, [click here](https://help.github.com/articles/fork-a-repo/).
